@@ -61,7 +61,7 @@ setTimeout(() => {
 
         {/* Header with back and share buttons */}
         {token && (
-          <header className="lg:absolute top-[2.0rem] mx-4 flex w-[calc(100%-2rem)] items-center justify-between rounded-[1.2rem] bg-white px-4 py-[0.6rem] sm:mx-0 sm:w-full sm:px-6 sm:mt-8">
+          <header className="lg:absolute top-[2.0rem] lg:mx-4 flex lg:w-[calc(100%-2rem)] items-center justify-between rounded-[1.2rem] bg-white px-4 py-[0.6rem] sm:mx-0  sm:w-full sm:px-6 sm:mt-8">
             <Link
               to="/add-links"
               className="rounded-[0.8rem] hover:bg-[#633cff] hover:text-white border border-[#633cff] px-4 py-2 text-sm font-semibold text-[#633cff] sm:px-[1.7rem]"
@@ -78,9 +78,13 @@ setTimeout(() => {
         )}
 
         {/* Profile card */}
-        {loading && <Loader />}
+        {loading && (
+
+            <Loader />
+         
+        )}
         <div className="flex flex-row justify-center items-center z-20 lg:-mt-28 ">
-          <div className="top-[10rem] w-full max-w-[27.4rem] flex flex-col items-center rounded-[2.4rem] bg-white px-6 py-[1.8rem] shadow-lg sm:px-[5.6rem] sm:min-h-screen">
+          <div className="top-[10rem] sm:w-full lg:max-w-[27.4rem] flex flex-col items-center rounded-[2.4rem] bg-white px-6 py-[1.8rem] shadow-lg sm:px-[1.6rem] sm:min-h-screen">
             {/* Avatar */}
             <div className="h-[10.4rem] w-[10.4rem] rounded-full border-[4px] border-[#633cff] bg-[#eee]">
               <img
@@ -99,7 +103,7 @@ setTimeout(() => {
             </div>
 
             {/* Links */}
-            <div className="flex flex-col gap-4 w-full px-2 sm:px-0">
+            <div className="flex flex-col gap-4 w-full px-2 sm:px-0 md:px-20">
               {links.map((link: any, index) => (
                 <a
                   key={index}

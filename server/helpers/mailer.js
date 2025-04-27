@@ -54,11 +54,11 @@ exports.sendEmail = async ({email, emailType, userId}) => {
     }</h1>
     <p style="color: #737373; margin-bottom: 15px;">Greetings from Devlinks! </p>
     <p style="color: #737373; margin-bottom: 15px;">${mainMessage}</p>
-    <p style="text-align: center; margin-bottom: 20px;"><a href="http://localhost:5173/${
+    <p style="text-align: center; margin-bottom: 20px;"><a href="https://rahman-devlinks.vercel.app/${
       emailType === "VERIFY" ? "verifyEmail" : "resetpassword"
     }?token=${hashedToken}" style="background-color: #633cff; color: #fafafa; padding: 10px 20px; border-radius: 5px; text-decoration: none;">${buttonLabel}</a></p>
     <p style="color: #737373; margin-bottom: 15px;">Alternatively, you can copy and paste the following link into your browser:</p>
-    <p style="color: #737373; margin-bottom: 15px;"> http://localhost:5173/${
+    <p style="color: #737373; margin-bottom: 15px;"> https://rahman-devlinks.vercel.app/${
       emailType === "VERIFY" ? "verifyEmail" : "resetpassword"
     }?
      token=${hashedToken}</p>
