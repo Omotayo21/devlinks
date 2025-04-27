@@ -1,4 +1,4 @@
 // src/config.js
-const BaseUrl = "http://localhost:5000"; // Localhost during development
+const BaseUrl = "https://api-devlinks.vercel.app"; // Localhost during development
 
 export default BaseUrl;

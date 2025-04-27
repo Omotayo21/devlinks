@@ -20,8 +20,8 @@ exports.sendEmail = async ({email, emailType, userId}) => {
        service: "gmail",
 
        auth: {
-         user: "rufaiabdulrahman21@gmail.com",
-         pass: "euujyyxarjcdnkdr",
+         user: process.env.NODEMAILER_MAIL,
+         pass: process.env.NODEMAILER_PASS,
        },
      });
    //add credentials to environmentfile later
