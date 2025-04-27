@@ -5,6 +5,7 @@ import { HiOutlineLink } from "react-icons/hi";
 import Cookies from "js-cookie";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { useUser } from "../context/userContext";
+import BaseUrl from "../config";
 const platforms = [
   {
     name: "GitHub",
@@ -171,7 +172,7 @@ const handleRemoveLink = async (index) => {
 
     // Only call API if it's an existing link (has _id)
   if(user){  if (linkToDelete._id) {
-      await axios.delete(`http://localhost:5000/api/links/delete`, {
+      await axios.delete(`${BaseUrl}/api/links/delete`, {
         data: {
           userId: user._id,
           linkId: linkToDelete._id,
@@ -261,7 +262,7 @@ const handleSave = async () => {
     });
 
     // Use PUT for bulk update
-    const response = await axios.put("http://localhost:5000/api/links", {
+    const response = await axios.put(`${BaseUrl}/api/links`, {
       userId: user._id,
       links: linksToSave,
     });

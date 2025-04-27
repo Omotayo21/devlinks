@@ -1,19 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { useLinkContext } from '../context/LinkContext';
-import Cookies from 'js-cookie'
-import axios from 'axios'
+
 import { useUser } from '../context/userContext';
 const PhoneMockup = () => {
    
-interface UserData {
-  _id: string;
-  firstName: string;
-  lastName : string;
-  email: string;
-  links: any;
-  profilePicture: string;
-
-}
  const { user } = useUser();
   
     

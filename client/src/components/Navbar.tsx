@@ -9,6 +9,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import BaseUrl from '../config'
 const Navbar = () => {
   interface UserData {
     _id: string;
@@ -25,7 +26,7 @@ const navigate = useNavigate();
         }
 
         const res = await axios.get<{ data: UserData }>(
-          `http://localhost:5000/api/user`,
+          `${BaseUrl}/api/user`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // Send token in Authorization header

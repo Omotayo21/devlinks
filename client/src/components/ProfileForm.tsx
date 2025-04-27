@@ -4,7 +4,8 @@ import Cookies from "js-cookie";
 import axios, {AxiosResponse} from "axios";
 import {toast} from 'react-hot-toast'
 import {useUser} from "../context/userContext";
-import profile from '../pages/profile';
+import BaseUrl from '../config'
+
 
 const ProfileForm = () => {
   interface UserData {
@@ -68,7 +69,7 @@ if(file){
         setIsLoading(true);
         if(user) {
           const response: AxiosResponse<any> = await axios.post(
-            "http://localhost:5000/api/profile",
+            `${BaseUrl}/api/profile`,
             {
               userId : user._id,
               firstName,

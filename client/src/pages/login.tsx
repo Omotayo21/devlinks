@@ -9,7 +9,7 @@ import BaseUrl from '../config'
 
 
 import axios from "axios";
-//import { toast } from "react-toastify";
+
 interface User {
   email: string;
   password: string;
