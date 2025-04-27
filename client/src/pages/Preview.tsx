@@ -5,6 +5,7 @@ import { HiOutlineLink } from "react-icons/hi";
 import axios from "axios";
 import Cookies from 'js-cookie'
 import BaseUrl from '../config'
+import Loader from "../components/Loader";
  interface UserProfileData {
    firstName: string;
    lastName: string;
@@ -13,7 +14,7 @@ import BaseUrl from '../config'
  }
 const Preview = () => {
  const token = Cookies.get("token");
-
+const [loading, setLoading] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
      const [firstName, setFirstName] = useState<string>("No name yet");
   const [lastName, setLastName] = useState<string>("")
@@ -27,6 +28,7 @@ const Preview = () => {
   };
 const route = useLocation();
   const getUserDetails = async () => {
+    setLoading(true);
     const id = route.pathname.split("/")[2];
     if (id) {
       const res = await axios.post(
@@ -41,6 +43,7 @@ const route = useLocation();
       setLinks(res.data.links);
       setEmail(res.data.email);
       setProfilePhoto(res.data.profilePicture);
+      setLoading(false);
     }
   };
   useEffect(() => {
@@ -75,6 +78,7 @@ setTimeout(() => {
         )}
 
         {/* Profile card */}
+        {loading && <Loader />}
         <div className="flex flex-row justify-center items-center z-20 lg:-mt-28 ">
           <div className="top-[10rem] w-full max-w-[27.4rem] flex flex-col items-center rounded-[2.4rem] bg-white px-6 py-[1.8rem] shadow-lg sm:px-[5.6rem] sm:min-h-screen">
             {/* Avatar */}

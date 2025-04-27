@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { useUser } from "../context/userContext";
 import BaseUrl from "../config";
+import Loader from '../components/Loader'
 const platforms = [
   {
     name: "GitHub",
@@ -278,7 +279,9 @@ const handleSave = async () => {
 
   return (
 <div className=" overflow-hidden ">
+
       <div className="bg-white overflow-x-hidden w-full sm:max-w-[21rem] lg:max-w-[41.5rem] md:max-w-[43rem] mx-auto p-4 lg:p-6 flex flex-col px-4 gap-4">
+       {isLoading && <Loader />}
         <h2 className="font-bold text-xl">Customise your links</h2>
         <p className="text-gray-500 text-sm sm:text-base">
           Add/edit/remove links below and then share all your profiles with the
