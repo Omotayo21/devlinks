@@ -12,6 +12,7 @@ import Loader from "./components/Loader";
 import Cookies from "js-cookie";
 import {toast} from "react-hot-toast";
 import { useUser } from "./context/userContext";
+import {Analytics} from "@vercel/analytics/react"
 
 
 import Navbar from "./components/Navbar";
@@ -135,6 +136,7 @@ refreshUserData()
 const App: React.FC = () => (
   <Router>
     <AppContent />
+    <Analytics /> 
   </Router>
 );
 
