@@ -6,13 +6,12 @@ import axios from "axios";
 import Cookies from 'js-cookie'
 import BaseUrl from '../config'
 import Loader from "../components/Loader";
- interface UserProfileData {
-   firstName: string;
-   lastName: string;
-   links: any;
-   email: string;
- }
+import { useUser } from "../context/userContext";
+
 const Preview = () => {
+const {user} = useUser()
+const route = useLocation();
+  const id = route.pathname.split("/")[2];
  const token = Cookies.get("token");
 const [loading, setLoading] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
@@ -20,16 +19,22 @@ const [loading, setLoading] = useState(false);
   const [lastName, setLastName] = useState<string>("")
        const [email, setEmail] = useState<string>("no mail yet");
        const [links, setLinks] = useState([])
+      const [userOriginalId, setUserOriginalId] = useState('')
        const [profilePhoto, setProfilePhoto] = useState<string>("");
+ useEffect(() => {if (user) {
+  setUserOriginalId(user._id || "");
+    console.log("useroriginalid", userOriginalId);
+} }, [user]);
+const toks = userOriginalId === id
 
  const handleCopy = () => {
     navigator.clipboard.writeText(window.location.href);
     setIsCopied(true);
   };
-const route = useLocation();
+
   const getUserDetails = async () => {
     setLoading(true);
-    const id = route.pathname.split("/")[2];
+  
     if (id) {
       const res = await axios.post(
         `${BaseUrl}/api/profile/info`,
@@ -49,7 +54,10 @@ const route = useLocation();
   useEffect(() => {
 
   getUserDetails()
-  }, []);
+
+  console.log("id",id)
+console.log("toks",toks)
+}, []);
 setTimeout(() => {
   isCopied && setIsCopied(false);
 }, 2000);
@@ -60,7 +68,7 @@ setTimeout(() => {
         <div className="h-[17rem] lg:flex rounded-b-[3.2rem] bg-[#633cff] sm:hidden"></div>
 
         {/* Header with back and share buttons */}
-        {token && (
+        {toks && (
           <header className="lg:absolute top-[2.0rem] lg:mx-4 flex lg:w-[calc(100%-2rem)] items-center justify-between rounded-[1.2rem] bg-white px-4 py-[0.6rem] sm:mx-0  sm:w-full sm:px-6 sm:mt-8">
             <Link
               to="/add-links"
