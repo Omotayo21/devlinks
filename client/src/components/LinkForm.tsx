@@ -15,53 +15,24 @@ const platforms = [
     color: "bg-black",
   },
   {
-    name: "Dev.to",
-    baseUrl: "https://www.dev.to/",
-    logo: "/devto.svg",
-    color: "bg-black",
-  },
-  {
-    name: "Frontend Mentor",
-    baseUrl: " https://www.frontendmentor.io/profile/",
-    logo: "/frontendmentor.svg",
-    color: "bg-white",
+    name: "LinkedIn",
+    baseUrl: "https://linkedin.com/in/",
+    logo: "/icon-linkedin.svg",
+    color: "bg-blue-700",
   },
 
-  {
-    name: "Gitlab",
-    baseUrl: " https://www.gitlab.com/",
-    logo: "/gitlab.svg",
-    color: "bg-orange-400",
-  },
   {
     name: "Youtube",
     baseUrl: " https://www.youtube.com/",
     logo: "/youtube.svg",
     color: "bg-orange-400",
   },
-  {
-    name: "LinkedIn",
-    baseUrl: "https://linkedin.com/in/",
-    logo: "/icon-linkedin.svg",
-    color: "bg-blue-700",
-  },
-  {
-    name: "Email",
-    baseUrl: "mailto:",
-    logo: "/email.svg",
-    color: "bg-red-500",
-  },
+
   {
     name: "Twitter",
     baseUrl: "https://twitter.com/",
     logo: "/twitter.svg",
     color: "bg-sky-500",
-  },
-  {
-    name: "Twitch",
-    baseUrl: "https://twitch.tv/",
-    logo: "/twitch.svg",
-    color: "bg-purple-500",
   },
 
   {
@@ -83,10 +54,41 @@ const platforms = [
     color: "bg-blue-600",
   },
   {
+    name: "Email",
+    baseUrl: "mailto:",
+    logo: "/email.svg",
+    color: "bg-red-500",
+  },
+  {
+    name: "Dev.to",
+    baseUrl: "https://www.dev.to/",
+    logo: "/devto.svg",
+    color: "bg-black",
+  },
+  {
+    name: "Frontend Mentor",
+    baseUrl: " https://www.frontendmentor.io/profile/",
+    logo: "/frontendmentor.svg",
+    color: "bg-white",
+  },
+
+  {
+    name: "Gitlab",
+    baseUrl: " https://www.gitlab.com/",
+    logo: "/gitlab.svg",
+    color: "bg-orange-400",
+  },
+  {
     name: "Stack overflow",
     baseUrl: "https://www.stackoverflow.com/users/",
     logo: "/stack-overflow.svg",
     color: "bg-orange-500",
+  },
+  {
+    name: "Twitch",
+    baseUrl: "https://twitch.tv/",
+    logo: "/twitch.svg",
+    color: "bg-purple-500",
   },
 ];
 interface Link {
