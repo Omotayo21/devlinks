@@ -66,6 +66,50 @@ const platforms = [
     color: "bg-black",
   },
   {
+    name: "Pinterest",
+    baseUrl: "https://pinterest.com/",
+    logo: "/pintrest.svg",
+    color: "bg-red-600",
+  },
+  {
+    name: "Snapchat",
+    baseUrl: "https://snapchat.com/add/",
+    logo: "/snapchat.svg",
+    color: "bg-yellow-400",
+  },
+  {
+    name: "Reddit",
+    baseUrl: "https://reddit.com/user/",
+    logo: "/reddit.svg",
+    color: "bg-orange-600",
+  },
+  {
+    name: "Medium",
+    baseUrl: "https://medium.com/@",
+    logo: "/medium.svg",
+    color: "bg-green-700",
+  },
+  {
+    name: "Dribbble",
+    baseUrl: "https://dribbble.com/",
+    logo: "/dribble.svg",
+    color: "bg-pink-500",
+  },
+  {
+    name: "Behance",
+    baseUrl: "https://www.behance.net/",
+    logo: "/behance.svg",
+    color: "bg-blue-600",
+  },
+
+ 
+  {
+    name: "Threads",
+    baseUrl: "https://www.threads.net/@",
+    logo: "/threads.svg",
+    color: "bg-black",
+  },
+  {
     name: "Frontend Mentor",
     baseUrl: " https://www.frontendmentor.io/profile/",
     logo: "/frontendmentor.svg",
